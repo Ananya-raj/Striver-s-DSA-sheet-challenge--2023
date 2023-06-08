@@ -147,6 +147,7 @@ class Solution {
 }
 ====================================================================================================================================================================
 DAY 4
+KADANE ALGO
 class Solution {
     public int countNegatives(int[][] grid) {
          int count = 0, row = 0, col = grid[0].length -1;
@@ -161,4 +162,32 @@ class Solution {
         return count;
     }
 }
-==========================================================================================================================================================================
+=========================================================================
+@@@@@@@@2@@@@@@
+sort 0,1,2
+
+
+class Solution {
+    public void sortColors(int[] nums) {
+        // Arrays.sort(nums);
+         int low = 0, mid = 0, high = nums.length - 1;
+        while (mid <= high) {
+            if (nums[mid] == 0) {
+                swap(nums, low, mid);
+                low++;
+                mid++;
+            } else if (nums[mid] == 1) {
+                mid++;
+            } else {
+                swap(nums, mid, high);
+                high--;
+            }
+        }
+    }
+    
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
