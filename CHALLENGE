@@ -191,3 +191,44 @@ class Solution {
         nums[j] = temp;
     }
 }
+
+====================================================================================
+DAY 5
+
+stock buy and sell for maximum profit 
+
+
+public class Solution {
+    public int maxProfit(int prices[]) {
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length - 1; i++) {
+            for (int j = i + 1; j < prices.length; j++) {
+                int profit = prices[j] - prices[i];
+                if (profit > maxprofit)
+                    maxprofit = profit;
+            }
+        }
+        return maxprofit;
+    }
+}
+
+
+my code 
+========
+public class Solution {
+public int maxp(int p[]){
+int minsofar=p[0],maxprofit =0;
+for(int i=0;i<p.length;i++)
+{
+minsofar=Math.min(minsofar,p[i]);
+int profit=p[i]-minsofar;
+maxprofit =Math.max(maxprofit,profit);
+}
+return maxprofit;
+}
+}
+
+==========================================================================
+
+
+
