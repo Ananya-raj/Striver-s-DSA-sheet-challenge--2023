@@ -304,3 +304,28 @@ class Solution {
 	}
 }
 =======================================================================================================================================================================
+DAY 8
+======
+
+FIND THE DUPLICATE(ONLY ONE WOULD BE THERE) USING CONSTANT SPACE
+class Solution {
+    public int findDuplicate(int[] nums) {
+      HashMap<Integer,Integer> map=new HashMap<>();
+      int res=0;
+      for(int i=0;i<nums.length;i++)
+      {
+         
+
+         if(map.containsKey(nums[i])){
+          res=nums[i];
+          break;}
+        else{
+          map.put(nums[i],1);
+          }
+      
+     
+      }
+            return res;
+    }
+    }
+ ================================================================================================================================================================================
