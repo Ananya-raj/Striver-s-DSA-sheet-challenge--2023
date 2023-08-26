@@ -1,5 +1,6 @@
 DAY 1
 =====================================================================================================================================================================
+
 Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
 
 You must do it in place.
@@ -718,3 +719,20 @@ public class Solution {
     }
 }
 =========================================================================================================================
+PAIRS OPERATION 
+public class Solution {
+    public int findLongestChain(int[][] pairs) {
+        Arrays.sort(pairs, (a, b) -> Integer.compare(a[1], b[1]));
+        
+        int cur = Integer.MIN_VALUE, ans = 0;
+        
+        for (int[] pair : pairs) {
+            if (cur < pair[0]) {
+                cur = pair[1];
+                ans++;
+            }
+        }
+        
+        return ans;
+    }
+}
