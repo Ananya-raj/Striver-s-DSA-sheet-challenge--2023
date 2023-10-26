@@ -892,3 +892,34 @@ class Solution {
         }
 }
 ===================================================================================================================================
+DELETE NTH NODE FROM END OF THE LIST
++===================================
+class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        // ListNode fast = head, slow = head;
+        // for (int i = 0; i < n; i++) fast = fast.next;
+        // if (fast == null) return head.next;
+        // while (fast.next != null) {
+        //     fast = fast.next;
+        //     slow = slow.next;
+        // }
+        // slow.next = slow.next.next;
+        // return head;
+        ListNode munde=head,hinde=head;
+        for(int i=0;i<n;i++)
+        munde=munde.next;
+        if(munde==null)
+        return head.next;
+        while(munde.next!=null)
+        {
+            munde=munde.next;
+            hinde=hinde.next;
+
+        }
+        hinde.next=hinde.next.next;
+    
+        return head;
+    
+}
+}
+=====================================================================================================================
